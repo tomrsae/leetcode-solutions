@@ -21,7 +21,8 @@ public class Solution {
                 if ((int)table[delta] == i) continue;
                 return new int[] { (int)table[delta], i };
             }
-            table.Add(nums[i], i);
+            if (!table.ContainsKey(nums[i]))
+                table.Add(nums[i], i);
         }
 
         return Array.Empty<int>();
